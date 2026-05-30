@@ -1,4 +1,6 @@
 spring:
+  profiles:
+    active: development
   application:
     name: s3_cloudflare_poc
   jpa:
@@ -10,3 +12,16 @@ spring:
     username: ${DATABASE_USERNAME}
     password: ${DATABASE_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
+
+clients:
+  cloudflare:
+    r2-storage:
+      access-key-id: ${CLOUDFLARE_ACCESS_KEY_ID}
+      secret-access-key: ${CLOUDFLARE_SECRET_ACCESS_KEY}
+      bucket-name: ${CLOUDFLARE_BUCKET_NAME}
+      uri: ${CLOUDFLARE_URI}
+      public-uri: ${CLOUDFLARE_PUBLIC_URI}
+
+security:
+  cors:
+    allowed-origins: http://localhost:3000
